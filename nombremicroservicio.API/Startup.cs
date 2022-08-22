@@ -98,7 +98,7 @@ namespace nombremicroservicio.API
             services.AddScoped(typeof(ISolicitudesCredito), typeof(SolicitudesCreditoRepository));
             services.AddScoped(typeof(ISolicitudesCreditoService), typeof(SolicitudesCreditoService));
             services.AddScoped(typeof(IAsignacionClientes), typeof(AsignacionClientesRepository));
-            services.AddScoped(typeof(IAsignacionClientesService), typeof(Asgina));
+            services.AddScoped(typeof(IAsignacionClientesService), typeof(AsignacionClientesService));
 
             services.AddControllers();
             #region Swagger

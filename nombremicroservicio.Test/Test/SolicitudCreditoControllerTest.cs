@@ -4,6 +4,7 @@ using Moq;
 using nombremicroservicio.API.Controllers;
 using nombremicroservicio.Domain.Interfaces;
 using nombremicroservicio.Entities.Models;
+using nombremicroservicio.Infrastructure.Services;
 using nombremicroservicio.Test.Data;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,21 @@ namespace nombremicroservicio.Test.Test
             result.Should().BeOfType<ConflictObjectResult>();
             var objResult = (ConflictObjectResult)result;
             objResult.StatusCode.Should().Be(409);
+        }
+
+        [Fact]
+        public void Post_OnErrorAlreadyExist_ErrorCodeConflict409()
+        {
+            //Arrange
+            var mockService = new Mock<ISolicitudesCredito>();
+            mockService
+                .Setup(service => service.Post(SolicitudCreditoDummyData.solicitudCredito))
+                .Returns(new SolicitudCreditoModel());
+            var ObjController = new SolicitudesCreditoService(mockService.Object);
+            //Act
+            var result = ObjController.Post(SolicitudCreditoDummyData.solicitudCredito);
+            //Assert
+            result.Should().BeOfType<SolicitudCreditoModel>();
         }
         #endregion
     }

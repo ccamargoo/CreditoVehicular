@@ -63,6 +63,11 @@ namespace nombremicroservicio.Infrastructure.Services
         {
             try
             {
+                var objList = objRepository.GetAll().Select(x => x.idVehiculo != data.idVehiculo && x.fechaElaboracion != data.fechaElaboracion).ToList();
+                if(objList.Any())
+                {
+                    return new SolicitudCreditoModel();
+                }
                 return objRepository.Post(data);
             }
             catch

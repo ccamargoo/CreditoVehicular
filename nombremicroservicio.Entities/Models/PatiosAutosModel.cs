@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace nombremicroservicio.Entities.Models
 {
+    [Table("tblPatiosAutos")]
     public class PatiosAutosModel
     {
         public int id { get; set; }
