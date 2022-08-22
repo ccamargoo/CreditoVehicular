@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nombremicroservicio.Infrastructure.Services
 {
-    public class ClientesService : IClientes
+    public class ClientesService : IClientesService
     {
         public readonly IClientes objRepository;
         public ClientesService(IClientes obj)

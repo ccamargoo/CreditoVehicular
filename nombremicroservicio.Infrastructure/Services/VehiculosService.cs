@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace nombremicroservicio.Infrastructure.Services
 {
-    public class VehiculosService : IVehiculos
+    public class VehiculosService : IVehiculosService
     {
         public readonly IVehiculos objRepository;
         public VehiculosService(IVehiculos obj)
