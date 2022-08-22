@@ -16,6 +16,12 @@ using OpenTelemetry.Trace;
 using OpenTelemetry.Logs;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
+using nombremicroservicio.Domain.Interfaces;
+using nombremicroservicio.Infrastructure.Services;
+using nombremicroservicio.Repository.Data;
+using Microsoft.EntityFrameworkCore;
+using nombremicroservicio.Entities.Models;
+using nombremicroservicio.Repository.Repository;
 
 namespace nombremicroservicio.API
 {
@@ -79,6 +85,20 @@ namespace nombremicroservicio.API
                                                                    .AllowAnyMethod()
                                                                    .AllowAnyHeader()));
             #endregion POLICY FOR CROSS DOMAIN
+            services.AddDbContext<ApplicationContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IClientes), typeof(ClientesRepository));
+            services.AddScoped(typeof(IClientesService), typeof(ClientesService));
+            services.AddScoped(typeof(IVehiculos), typeof(VehiculosRepository));
+            services.AddScoped(typeof(IVehiculosService), typeof(VehiculosService));
+            services.AddScoped(typeof(IPatiosAutos), typeof(PatiosAutosRepository));
+            services.AddScoped(typeof(IPatiosAutosService), typeof(PatiosAutosService));
+            services.AddScoped(typeof(ISolicitudesCredito), typeof(SolicitudesCreditoRepository));
+            services.AddScoped(typeof(ISolicitudesCreditoService), typeof(SolicitudesCreditoService));
+            services.AddScoped(typeof(IAsignacionClientes), typeof(AsignacionClientesRepository));
+            services.AddScoped(typeof(IAsignacionClientesService), typeof(Asgina));
 
             services.AddControllers();
             #region Swagger
