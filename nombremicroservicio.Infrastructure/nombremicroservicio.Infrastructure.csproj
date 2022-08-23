@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\nombremicroservicio.Domain\nombremicroservicio.Domain.csproj" />
+    <ProjectReference Include="..\nombremicroservicio.Repository\nombremicroservicio.Repository.csproj" />
   </ItemGroup>
 
 </Project>

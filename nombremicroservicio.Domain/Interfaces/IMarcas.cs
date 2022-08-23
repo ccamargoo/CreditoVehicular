@@ -15,4 +15,7 @@ namespace nombremicroservicio.Domain.Interfaces
         bool Put(int id, MarcaModel cliente);
         bool Delete(int id);
     }
+    public interface IMarcasService : IMarcas {
+        void ChargeCsv(string rutaArchivo);
+    }
 }

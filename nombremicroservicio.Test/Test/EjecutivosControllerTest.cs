@@ -21,7 +21,7 @@ namespace nombremicroservicio.Test.Test
         public async Task GetAll_OnSuccess_ListOfClients()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.GetAll())
                 .Returns(EjecutivosDummyData.Ejecutivos);
@@ -38,7 +38,7 @@ namespace nombremicroservicio.Test.Test
         public async Task GetAll_OnError_ErrorCode404()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.GetAll())
                 .Returns(new List<EjecutivoModel>());
@@ -58,7 +58,7 @@ namespace nombremicroservicio.Test.Test
         [Fact]
         public async Task Get_OnSuccess_ClientModel()
         {
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Get(1))
                 .Returns(EjecutivosDummyData.Ejecutivo);
@@ -75,7 +75,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Get_OnError_ErrorCode404()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Get(1))
                 .Returns(new EjecutivoModel());
@@ -94,7 +94,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Post_OnSucces_ClienteModel()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Post(EjecutivosDummyData.Ejecutivo))
                 .Returns(EjecutivosDummyData.Ejecutivo);
@@ -111,7 +111,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Post_OnError_ErrorCodeConflict409()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Post(EjecutivosDummyData.Ejecutivo))
                 .Returns(new EjecutivoModel());
@@ -130,7 +130,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Put_OnSucces_ClienteModel()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Put(1, EjecutivosDummyData.Ejecutivo))
                 .Returns(true);
@@ -147,7 +147,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Put_OnError_Bool()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Put(1, EjecutivosDummyData.Ejecutivo))
                 .Returns(false);
@@ -166,7 +166,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Delete_OnSucces_Bool()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Delete(1))
                 .Returns(true);
@@ -183,7 +183,7 @@ namespace nombremicroservicio.Test.Test
         public async Task Delete_OnError_ErrorCode404()
         {
             //Arrange
-            var mockService = new Mock<IEjecutivos>();
+            var mockService = new Mock<IEjecutivosService>();
             mockService
                 .Setup(service => service.Delete(1))
                 .Returns(false);

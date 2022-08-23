@@ -13,4 +13,8 @@ namespace nombremicroservicio.Domain.Interfaces
         bool Put(int id, EjecutivoModel cliente);
         bool Delete(int id);
     }
+
+    public interface IEjecutivosService : IEjecutivos {
+        void ChargeCsv(string rutaArchivo);
+    }
 }

@@ -12,7 +12,10 @@ namespace nombremicroservicio.Domain.Interfaces
         ClienteModel Post(ClienteModel cliente);
         bool Put(int id, ClienteModel cliente);
         bool Delete(int id);
+        
     }
 
-    public interface IClientesService : IClientes { }
+    public interface IClientesService : IClientes {
+        void ChargeCsv(string rutaArchivo);
+    }
 }

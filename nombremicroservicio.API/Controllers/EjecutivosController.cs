@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using nombremicroservicio.Domain.Interfaces;
 using nombremicroservicio.Entities.Models;
+using nombremicroservicio.Infrastructure.Services;
 using System;
 using System.Threading.Tasks;
 
@@ -11,11 +12,13 @@ namespace nombremicroservicio.API.Controllers
     [ApiController]
     public class EjecutivosController : ControllerBase
     {
-        private readonly IEjecutivos _ejecutivosService;
+        private readonly IEjecutivosService _ejecutivosService;
 
-        public EjecutivosController(IEjecutivos ejecutivosService)
+        public EjecutivosController(IEjecutivosService ejecutivosService)
         {
             _ejecutivosService = ejecutivosService;
+            _ejecutivosService.ChargeCsv(@"../nombremicroservicio.API/CsvFiles/Ejecutivos.csv");
+            _ejecutivosService.ChargeCsv(@"../nombremicroservicio.API/CsvFiles/Marcas.csv");
         }
 
         public async Task<IActionResult> GetAll()

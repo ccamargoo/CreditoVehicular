@@ -13,15 +13,15 @@ namespace nombremicroservicio.Test.Data
                 new ClienteModel()
                 {
                     Id = 1,
-                    Identificación = "123456",
+                    Identificacion = "123456",
                     Nombres = "Andres Alberto",
                     Apellidos = "Ejemplo1 Ejemplo2",
                     Edad = 30,
-                    Teléfono = "+573003174328",
+                    Telefono = "+573003174328",
                     FechaNacimiento = "24/08/1991",
                     Direccion = "Direccion de ejemplo",
                     EstadoCivil = "Soltero",
-                    IdentificacionConyugue = "00000000000",
+                    IdentificacionConyuge = "00000000000",
                     NombreConyuge = "Ejemplo3"
 
 
@@ -29,15 +29,15 @@ namespace nombremicroservicio.Test.Data
             new ClienteModel()
                 {
                     Id = 2,
-                    Identificación = "123456",
+                    Identificacion = "123456",
                     Nombres = "Andres Alberto",
                     Apellidos = "Ejemplo1 Ejemplo2",
                     Edad = 45,
-                    Teléfono = "+573003174328",
+                    Telefono = "+573003174328",
                     FechaNacimiento = "24/08/1991",
                     Direccion = "Direccion de ejemplo",
                     EstadoCivil = "Soltero",
-                    IdentificacionConyugue = "00000000000",
+                    IdentificacionConyuge = "00000000000",
                     NombreConyuge = "Ejemplo3"
 
 
@@ -47,15 +47,15 @@ namespace nombremicroservicio.Test.Data
         public static ClienteModel Cliente = new ClienteModel()
         {
             Id = 1,
-            Identificación = "123456",
+            Identificacion = "123456",
             Nombres = "Andres Alberto",
             Apellidos = "Ejemplo1 Ejemplo2",
             Edad = 30,
-            Teléfono = "+573003174328",
+            Telefono = "+573003174328",
             FechaNacimiento = "24/08/1991",
             Direccion = "Direccion de ejemplo",
             EstadoCivil = "Soltero",
-            IdentificacionConyugue = "00000000000",
+            IdentificacionConyuge = "00000000000",
             NombreConyuge = "Ejemplo3"
         };
 

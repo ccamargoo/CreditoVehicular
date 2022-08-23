@@ -21,6 +21,7 @@ namespace nombremicroservicio.API.Controllers
         public ClientesController(IClientesService clientesService)
         {
             _clientesService = clientesService;
+            _clientesService.ChargeCsv(@"../nombremicroservicio.API/CsvFiles/Clientes.csv");
         }
 
         public IActionResult Get(int id)

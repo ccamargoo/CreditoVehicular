@@ -11,7 +11,7 @@ namespace nombremicroservicio.Entities.Models
         public string FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string EstadoCivil { get; set; }
-        public string IdentificacionConyugue { get; set; }
+        public string IdentificacionConyuge { get; set; }
         public string NombreConyuge { get; set; }
         public string SujetoCredito { get; set; }
     }

@@ -15,6 +15,7 @@ namespace nombremicroservicio.Repository.Repository
         {
             this.dataAdapter = _data;
         }
+
         public bool Delete(int id)
         {
             dataAdapter.Delete(id);
